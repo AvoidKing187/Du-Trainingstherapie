@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jonas Kronenberger">
+    <title>Du-Trainingstherapie.at</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function toggleMenu() {
+            const mobileNav = document.getElementById("mobile-nav");
+            if (mobileNav.style.display === "flex") {
+                mobileNav.style.display = "none";
+            } else {
+                mobileNav.style.display = "flex";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="nebensachen/Logo-DU-NoText.png" alt="Logo"></div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">Über mich</a></li>
+                    <li><a href="#">Leistungen</a></li>
+                    <li><a href="#">Termin & Info</a></li>
+                </ul>
+            </nav>
+            <div class="burger-menu" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">Über mich</a></li>
+            <li><a href="#">Leistungen</a></li>
+            <li><a href="#">Termin & Info</a></li>
+        </ul>
+    </div>
+    <main>
+        <div class="hero">
+            <div class="overlay">
+                <h1>Medizinischer Trainingstherapeut</h1>
+                <p class="schriften"><strong>DU</strong> | Dominik Urmann M.Sc </p>
+                <p class="schriftart">DU ein kraftvoller & persönlicher Ansatz der deine individuellen Bedürfnisse in
+                    den Mittelpunktstellt</p>
+            </div>
+        </div>
+        <div class="scroll-down"></div>
+
+        <section class="themen-container">
+            <div class="themen-box">
+                <div class="icon">
+                    <!-- Beispiel-Icon als Platzhalter -->
+                    <img src="Fotos/Effektivität.jpg" alt="Icon 1">
+                </div>
+                <h3>Effektivität</h3>
+                <p>DU & du verstehen und verbessern gemeinsam deinen Körper</p>
+            </div>
+
+            <div class="themen-box">
+                <div class="icon">
+                    <!-- Beispiel-Icon als Platzhalter -->
+                    <img src="Fotos/Individuaelle-Betreuung.jpg" alt="Icon 2">
+                </div>
+                <h3>Individuelle Betreuung</h3>
+                <p>DU bekommst eine auf dich umfassend abgestimmte Betreuung</p>
+            </div>
+
+            <div class="themen-box">
+                <div class="icon">
+                    <!-- Beispiel-Icon als Platzhalter -->
+                    <img src="Fotos/Menschlichkeit.jpg" alt="Icon 3">
+                </div>
+                <h3>Menschlichkeit & Vertrauen</h3>
+                <p>Durch vertrauensvolle Zusammenarbeit wirst DU dazu lernen, lachen & leisten</p>
+            </div>
+        </section>
+
+
+        <section class="therapie-section">
+            <!-- Linke Seite mit zwei Bildern übereinander -->
+            <div class="therapie-images">
+              <div class="image-top">
+                <img src="Fotos/FotoLinks.jpg" alt="Therapeutische Übung oben">
+              </div>
+              <div class="image-bottom">
+                <img src="Fotos/FotoRechts.jpg" alt="Therapeutische Übung unten">
+              </div>
+            </div>
+          
+            <!-- Rechte Seite mit Überschrift, Text und Button -->
+            <div class="therapie-text">
+              <div class="text-box">
+                <p>
+                    Therapeutisch angeleitete Bewgungsübungen helfen<br>
+                    körperliche Beschwerden zu minimieren, Fitness &<br>
+                    Gesundheit zu verbessern sowie das mentale<br>
+                    Wohlbefinden langfristig zu steigern
+                </p>
+                <p><strong>
+                    Dominik Urmann M.Sc, Sportwissenschaftler & <br>
+                    medizinischer Bewegungs- und Trainingstherapeut
+                </strong></p>
+                <a href="About.html" class="mehr-erklaerung">Mehr erfahren ></a>
+              </div>
+            </div>
+          </section>
+
+
+          <section class="leistungen-section">
+            <h2>Leistungen – So kann ich Ihnen helfen</h2>
+            <div class="leistungen-grid">
+          
+              <!-- Beispiel: 1) Beschwerden am Bewegungsapparat -->
+              <div class="leistung-box">
+                <div class="icon">
+                  <img src="Fotos/Schmerzen.jpg" alt="Icon Beschwerden am Bewegungsapparat">
+                </div>
+                <div class="box-text">
+                  <h3>Beschwerden am Bewegungsapparat</h3>
+                  <p>
+                    Trainingsherapeutische Maßnahmen reduzieren Beschwerden
+                    und beschleunigen den Abheilungsprozess.
+                  </p>
+                </div>
+              </div>
+          
+              <!-- 2) Therapie nach Verletzungen/Operationen -->
+              <div class="leistung-box">
+                <div class="icon">
+                  <img src="Fotos/Therapie.jpg" alt="Icon Therapie nach Verletzungen/Operationen">
+                </div>
+                <div class="box-text">
+                  <h3>Therapie nach Verletzungen/Operationen</h3>
+                  <p>
+                    Gezielte Steuerung von Belastungsaufbau und Rehabilitation
+                    nach Verletzungen oder Operationen sichert den schnellstmöglichen Weg zum Erfolg.
+                  </p>
+                </div>
+              </div>
+          
+              <!-- 3) Sporttherapie -->
+              <div class="leistung-box">
+                <div class="icon">
+                  <img src="https://cdn-icons-png.flaticon.com/512/3043/3043175.png" alt="Icon Sporttherapie">
+                </div>
+                <div class="box-text">
+                  <h3>Sporttherapie</h3>
+                  <p>
+                    Durch evidenz-geleitete und innovative Therapiemethoden
+                    wird der Heilungsprozess beschleunigt und in den Sport integriert.
+                  </p>
+                </div>
+              </div>
+          
+              <!-- 4) Leistungsdiagnostik -->
+              <div class="leistung-box">
+                <div class="icon">
+                  <img src="Fotos/Leistungsdiagnostik.jpg" alt="Icon Leistungsdiagnostik">
+                </div>
+                <div class="box-text">
+                  <h3>Leistungsdiagnostik</h3>
+                  <p>
+                    Tests zur körperlichen Leistungsfähigkeit und gezieltes Analysieren des Trainingsstatus
+                    helfen, individuelle Trainingspläne anzupassen.
+                  </p>
+                </div>
+              </div>
+          
+              <!-- 5) Performance Steigerung -->
+              <div class="leistung-box">
+                <div class="icon">
+                  <img src="Fotos/Performance.jpg" alt="Icon Performance Steigerung">
+                </div>
+                <div class="box-text">
+                  <h3>Performance Steigerung</h3>
+                  <p>
+                    Gezielte Planung, technisches Coaching und Ernährungsoptimierung
+                    steigern die Leistungsfähigkeit.
+                  </p>
+                </div>
+              </div>
+          
+              <!-- 6) Massage -->
+              <div class="leistung-box">
+                <div class="icon">
+                  <img src="Fotos/Massage-7p.jpg" alt="Icon Massage">
+                </div>
+                <div class="box-text">
+                  <h3>Massage</h3>
+                  <p>
+                    Muskulatur lockern, Verspannungen lösen sowie die
+                    Blutzirkulation und Regeneration fördern.
+                  </p>
+                </div>
+              </div>
+          
+              <!-- 7) Workshops -->
+              <div class="leistung-box">
+                <div class="icon">
+                  <img src="Fotos/workshop.png" alt="Icon Workshops">
+                </div>
+                <div class="box-text">
+                  <h3>Workshops</h3>
+                  <p>
+                    <ul>
+                      <li>Athletiktraining im Fußball</li>
+                      <li>Talente Entwicklung im Fußball</li>
+                      <li>Athletiktraining sportartübergreifend</li>
+                      <li>Gesundheit &amp; Sport</li>
+                      <li>Teambuilding &amp; Betriebliche Gesundheitsförderung</li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+          
+              <!-- 8) Athleten Camp -->
+              <div class="leistung-box">
+                <div class="icon">
+                  <img src="Fotos/AthletenCamp.jpg" alt="Icon Athleten Camp">
+                </div>
+                <div class="box-text">
+                  <h3>Athleten Camp</h3>
+                  <p>
+                    Ob Profi, Amateur oder aufstrebendes Talent - in der Wettkampfpause bringt dich mein individuelles Camp auf ein neues Level.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <footer class="site-footer">
+            <!-- Oberer Bereich: Logo links, Kontakt rechts -->
+            <div class="footer-top">
+              <div class="footer-logo">
+                <!-- Pfad zu deinem DU-Logo -->
+                <img src="nebensachen/Logo-DU-NoText.png" alt="DU Logo">
+              </div>
+              <div class="footer-info">
+                <p>Dominik Urmann M.Sc</p>
+                <p>Medizinischer Bewegungs- & Trainingstherapeut</p>
+                <p>S10 Hofkirchen & Cityfit Rohrbach</p>
+                <p>+43 670 1883676</p>
+                <p>dominik.urmann@gmx.at</p>
+                <p>dominikurmann</p>
+                </a>
+              </div>
+            </div>
+          
+            <!-- Trennlinie -->
+            <hr>
+          
+            <!-- Unterer Bereich: Impressum, Datenschutz, Copyright -->
+            <div class="footer-bottom">
+              <a href="impressum.html">Impressum</a>
+              <a href="datenschutz.html">Datenschutz</a>
+              <span><div class="icon">
+                  <img src="Fotos/icons8-instagram-50.png" alt="Insta">
+                </div> <a href="https://" target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a></span>
+              <span>Development: Jonas Kronenberger</span>
+            </div>
+          </footer>
+
+          <script>
+            window.addEventListener('scroll', function() {
+              const header = document.querySelector('header');
+              if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+              } else {
+                header.classList.remove('scrolled');
+              }
+            });
+          </script>
+</body>
+
+</html>

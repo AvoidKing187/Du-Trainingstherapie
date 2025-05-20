@@ -1,0 +1,933 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+/* Fixierter Header */
+header {
+  position: fixed;       /* Bleibt beim Scrollen oben */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;         /* Header über allen anderen Elementen */
+  
+  display: flex;         /* Logo links, Menü rechts */
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: 10px 40px;    /* Innenabstand – nach Wunsch anpassen */
+  background: transparent; /* Kein Hintergrund (Hero-Bild „schimmert“ durch) */
+  box-sizing: border-box; /* Vermeidet Probleme bei der Breite */
+}
+/* Neuer Zustand: Sobald gescrollt wird, erscheint ein Hintergrund */
+header.scrolled {
+  background: rgba(165, 165, 165, 0.95); /* Hier kannst du die Farbe anpassen */
+  transition: background 0.3s ease;
+}
+
+/* Hauptbereich, falls du NICHT willst, dass der Text
+   vom Header verdeckt wird, kannst du hier
+   margin-top entsprechend der Header-Höhe setzen.
+   Wenn du den Hero-Bereich bewusst hinter den Header
+   legen möchtest, lasse margin-top: 0. */
+main {
+  margin-top: 0;
+}
+.logo img {
+    height: 120px;
+}
+.menu {
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-right: 60px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 23px;
+    text-shadow: 1px 1px 1px black; /* Schwarze Umrandung */
+}
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 20;
+}
+.burger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+}
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+.mobile-nav li {
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+.mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+.hero {
+    background-image: url('Fotos/Startseite.JPEG');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.801);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 30%;
+    margin-bottom: 20%;
+    line-height: 1.5; /* 1.5-facher Zeilenabstand */
+    }
+.schriftart {
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    }
+.schriften{
+    font-size: 25px;
+}
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .burger-menu {
+        display: flex;
+    }
+}
+@media (max-width: 480px) {
+    .logo img {
+        height: 80px;
+    }
+    .overlay {
+        width: 100%;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounce 1.5s infinite;
+    cursor: pointer;
+}
+
+.scroll-down::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(-45deg);
+    margin-top: 5px;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, 10px);
+    }
+}
+
+/* Grundlegendes Reset/Normierung optional */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Heller Hintergrund, falls gewünscht */
+    color: #333;
+  }
+  
+/* Container für die drei Boxen */
+.themen-container {
+  display: flex;
+  justify-content: space-between; /* Boxen verteilen sich über die ganze Breite */
+  align-items: stretch;
+  gap: 30px;                      /* Abstand zwischen den Boxen */
+  width: 90%;                   /* Nimmt die gesamte Seitenbreite ein */
+  margin-left: 4.5%;                     /* Kein äußerer Rand */
+  margin-top: 30px;
+  padding: 0 20px;               /* Kleiner Innenabstand, damit Text nicht am Fensterrand klebt */
+}
+
+/* Einzelne Box */
+.themen-box {
+  flex: 1;                       /* Alle Boxen gleich breit */
+  min-height: 260px;            /* Größere Mindesthöhe, anpassbar */
+  background-color: #f4f4f4;        /* hellgrauer Hintergrund */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;                /* Mehr „Luft“ im Inneren der Box */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;      /* Inhalt in der Mitte (vertikal) */
+}
+
+/* Icon-Bereich */
+.themen-box .icon {
+  margin-bottom: 20px;
+}
+
+.themen-box .icon img {
+  width: 60px;   /* Größeres Icon */
+  height: 60px;  /* Gleiche Höhe wie Breite */
+}
+
+/* Überschrift */
+.themen-box h3 {
+  margin-bottom: 15px;
+  font-size: 2rem;  /* Größere Schriftgröße für die Überschrift */
+}
+
+/* Beschreibungstext */
+.themen-box p {
+  font-size: 1.2rem; /* Größere Schrift für den Text */
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Grundlegende Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+  }
+  
+/************************************************
+  Grundlayout für den gesamten Abschnitt
+************************************************/
+.therapie-section {
+  display: flex;              /* Bilder links, Text rechts */
+  justify-content: flex-start;/* Bilder am linken Rand, Text rechts davon */
+  align-items: flex-start;    /* Am oberen Rand ausrichten */
+  gap: 2rem;                  /* Abstand zwischen Bild-Spalte und Text-Spalte */
+  margin: 2rem 0;            /* Außenabstand oben/unten */
+  padding: 0 2rem;           /* Einrückung links und rechts (optional) */
+}
+
+/************************************************
+  Linke Spalte mit zwei Bildern übereinander
+************************************************/
+.therapie-images {
+  position: relative;           /* Ermöglicht das absolute Positionieren */
+  width: 450px;                 /* Gesamtbreite (anpassen!) */
+  height: 600px;               /* Gesamthöhe (anpassen!) */
+  margin: 2rem auto;           /* Zentrierter Block, optional */
+}
+
+/* Erstes Bild (oben / links) */
+.image-top img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 
+    Kein width: 100% oder width: XYZ, damit die
+    Bilder ihr Hochformat behalten.
+    Stattdessen begrenzen wir die maximale Höhe.
+  */
+  max-height: 550px;           /* Bild soll nicht zu groß werden */
+  height: auto;                /* Höhe bleibt flexibel */
+  width: auto;                 /* Breite automatisch anhand des Hochformats */
+  
+  /* Weißer Rand + Schatten */
+  border: 5px solid #fff;      
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  
+  z-index: 2;                  /* Liegt über dem anderen Bild */
+}
+
+/* Zweites Bild (unten / rechts) */
+.image-bottom img {
+  position: absolute;
+  /* Leichter Versatz, damit es unten/rechts teilweise
+     unter dem ersten Bild liegt */
+  bottom: 25px;
+  left: 380px;                 /* und 100px nach rechts verschoben */
+  
+  max-height: 780px;           /* Auch hier die gleiche max-Höhe */
+  height: auto;
+  width: auto;
+
+  border: 5px solid #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  
+  z-index: 1;                  /* Liegt hinter dem oberen Bild */
+}
+/************************************************
+  Rechte Spalte mit Text
+************************************************/
+.therapie-text {
+  flex: 1;                    /* Nimmt den restlichen Platz ein */
+  max-width: 600px;           /* Oder beliebige maximale Breite */
+  margin-left: 20%;
+  margin-right: 5%;
+  margin-top: 8%;
+
+}
+
+/************************************************
+  Textbox-Styling (Hintergrund, Abstände, etc.)
+************************************************/
+.text-box {
+  background: #fff;           /* Weißer Hintergrund (falls nötig) */
+  padding: 1rem 2rem;         /* Innenabstände */
+  border-radius: 5px;          /* Größe des Rahmens */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);  /* Schatten */
+  text-align: center;  /* Text Zentriert */
+}
+
+/************************************************
+  Überschrift und Text
+************************************************/
+.text-box h2 {
+  font-size: 1.8rem;          /* Größe anpassen, damit es wie im Screenshot aussieht */
+  margin-bottom: 1rem;
+  color: #333;                /* Schriftfarbe */
+}
+
+.text-box p {
+  line-height: 1.6;           /* Angenehme Zeilenhöhe */
+  margin-bottom: 1rem;
+  color: #555;                /* Dezente Schriftfarbe */
+}
+
+.text-box strong {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #333;
+}
+
+/************************************************
+  "Mehr erfahren"-Button
+************************************************/
+.mehr-erklaerung {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffffff;   /* Grüne Hintergrundfarbe (nach Screenshot) */
+  color: #000000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  outline: 1px solid #00785B; /* Outline mit roter Farbe hinzufügen */
+}
+
+.mehr-erklaerung:hover {
+  background-color: #00785B;   /* Etwas dunkleres Grün beim Hover */
+  color: #fff;
+}
+
+  
+  /* --- RESPONSIVE ANPASSUNGEN --- */
+  @media (max-width: 768px) {
+    .therapie-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .therapie-images,
+    .therapie-text {
+      flex: none;
+      max-width: 90%;
+      width: 100%;
+    }
+  
+    .therapie-images {
+      height: 300px; /* Weniger Höhe für Smartphones */
+
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .image-top,
+    .image-bottom {
+      width: 70%; /* Gleiche Breite für beide Bilder auf Mobile */
+      left: 50%;  /* Zentrieren */
+      transform: translateX(-50%);
+      overflow: hidden;
+    }
+  
+    .image-top {
+      top: 0;
+    }
+    .image-bottom {
+      bottom: 0;
+      transform: translateX(-50%) translateY(10%);
+    }
+  
+    .text-box {
+      margin-top: 20px;
+    }
+  }
+
+
+  .image-top img, .image-bottom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  /* Grundlegende Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+  }
+  
+/*******************************************************
+  SECTION-STYLING & ÜBERSCHRIFT
+*******************************************************/
+.leistungen-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.leistungen-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/*******************************************************
+  GRID FÜR 2 SPALTEN
+*******************************************************/
+.leistungen-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* RESPONSIVE: Bei schmalen Bildschirmen -> 1 Spalte */
+@media (max-width: 800px) {
+  .leistungen-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*******************************************************
+  BOX-STYLING: ICON LINKS, TEXT RECHTS
+*******************************************************/
+.leistung-box {
+  display: flex;               /* Horizontale Anordnung */
+  align-items: center;         /* Vertikale Zentrierung der Inhalte */
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  gap: 20px;                   /* Abstand zwischen Icon und Text */
+}
+
+/*******************************************************
+  ICON-STYLING (links, vertikal zentriert)
+*******************************************************/
+.leistung-box .icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leistung-box .icon img {
+  max-width: 60px;
+  height: auto;
+}
+
+/*******************************************************
+  TEXT-STYLING (rechts)
+*******************************************************/
+.box-text {
+  flex: 1;                     /* Nimmt den restlichen Platz ein */
+}
+
+.box-text h3 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #2e2e2e;
+}
+
+.box-text p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* UL im Text (für Workshops) */
+.box-text p ul {
+  list-style: disc outside;
+  margin: 0.5rem 0 0 1.2rem;
+  padding-left: 0;
+}
+
+.box-text p ul li {
+  margin-bottom: 0.25rem;
+}
+
+/*******************************************************
+  (OPTIONAL) LEICHTER HOVER-EFFEKT
+*******************************************************/
+.leistung-box:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+
+/************************************************
+  FOOTER-GESAMT-STYLING
+************************************************/
+.site-footer {
+  background-size: cover;
+  background-color: #e7e7e7;
+  padding: 20px 40px;
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 2rem;
+  text-align: center; /* Zentriert den Text im Footer */
+  max-width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/************************************************
+  OBERER BEREICH: LOGO UND KONTAKTINFO
+************************************************/
+.footer-top {
+  display: flex;
+  align-items: center;      /* Vertikal zentriert das Logo und die Info */
+  justify-content: center;  /* Zentriert die gesamte Gruppe */
+  gap: 20px;                /* Abstand zwischen Logo und Text */
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  flex-shrink: 0;           /* Logo behält seine Größe */
+  margin-right: 15%;
+}
+
+.footer-logo img {
+  max-height: 160px;  /* Logo deutlich größer – passe den Wert an */
+  width: auto;
+}
+
+.footer-info {
+  text-align: left;   /* Text linksbündig, da er rechts neben dem Logo steht */
+}
+
+.footer-info p {
+  margin: 0.3rem 0;
+}
+/************************************************
+  TRENNLINIE
+************************************************/
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;
+}
+
+/************************************************
+  UNTERER BEREICH: IMPRESSUM, DATENSCHUTZ, ETC.
+************************************************/
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.footer-bottom a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-bottom a:hover {
+  color: #000;
+}
+
+.footer-bottom span,
+.footer-bottom span a {
+  color: #555;
+}
+
+.footer-bottom span a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* About.html*/
+/*
+
+
+
+
+*/
+.Start {
+  background-image: url('Fotos/AboutStartBild.jpg');
+  background-size: cover;        /* Bild füllt die Breite aus */
+  background-position: center;   /* Bild zentrieren */
+  height: 50vh;                  /* Nur halb so hoch wie der Viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quote-section {
+  /* Zentrierter Block mit Abstand */
+  text-align: center;
+  max-width: 800px;   /*  maximale Breite */
+  margin: 0 auto;     /* Zentriert den Abschnitt */
+  padding: 3rem 1rem; /* Abstand  etwas seitlich */
+}
+
+.quote-icon {
+  /* Großes Anführungszeichen */
+  font-size: 9.5rem;  /*  größe*/
+  color: #555;        /* Grauton */
+}
+
+.quote-section h2 {
+  font-size: 1.5rem;  /* Größere Schrift für die Hauptzeile */
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.quote-section p {
+  font-size: 1rem;    /* Kleinere Schrift*/
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.AboutScroll-down {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bounce 1.5s infinite;
+  cursor: pointer;
+}
+
+.AboutScroll-down::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-left: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  transform: rotate(-45deg);
+  margin-top: 5px;
+}
+
+
+/* Container für Bild + Text */
+.profile-section {
+  display: flex;
+  align-items: flex-start;      /* Oben bündig */
+  max-width: 1200px;           /* Optionale maximale Breite */
+  margin: 7rem auto;           /* Zentriert mit Abstand oben/unten */
+  position: relative;          /* Ermöglicht z-index-Steuerung */
+  padding: 0 1rem;             /* Kleiner Seitenabstand */
+}
+
+/* Linke Spalte: Bild */
+.profile-image {
+  flex: 0 0 400px;             /* Feste Breite für das Bild, anpassbar */
+  z-index: 1;                  /* Bild unter der Textbox */
+}
+.profile-image img {
+  width: 100%;                 /* Füllt die 400px-Breite */
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Rechte Spalte: Text, überlappt das Bild */
+.profile-text {
+  flex: 1;
+  position: relative;
+  z-index: 2;                  /* Über dem Bild */
+  margin-left: -60px;          /* Negativer Wert für die Überlappung */
+  margin-top: 90px;
+  text-align: left;
+
+}
+
+/* Textbox-Styling */
+.text-box {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.507);
+}
+
+/* Absatz-Text */
+.text-box p {
+  margin-bottom: 1rem;
+  color: #333;
+  margin: 0;             /* Entfernt alle Standard-Abstände */
+  line-height: 1.4;      /* Verringert den Zeilenabstand, z.B. 1.4 */
+}
+
+/* Container für den Abschnitt */
+.praxis-info {
+  max-width: 800px;      /* Begrenze die Breite, damit es gut lesbar bleibt */
+  margin: 3rem auto;     /* Zentriert und Abstand oben/unten */
+  padding: 0 1rem;       /* Kleiner Seitenabstand */
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Hauptüberschrift */
+.praxis-info h2 {
+  font-size: 2rem;       /* Größere Schrift für die Überschrift */
+  font-weight: bold;
+  color: #333;           /* Dunkle Schriftfarbe */
+  margin-bottom: 0.5rem; /* Leichter Abstand nach unten */
+}
+
+/* Subheadline */
+.praxis-info h3 {
+  font-size: 1.3rem;     /* Etwas kleiner als h2 */
+  color: #555;
+  margin-bottom: 1rem;   /* Abstand zum Fließtext */
+}
+
+/* Fließtext */
+.praxis-info p {
+  line-height: 1.6;      /* Angenehme Zeilenhöhe */
+  color: #555;           /* Dezente Schriftfarbe */
+  margin-bottom: 1rem;   /* Abstand zwischen Absätzen */
+}
+
+.p2{
+  font-style: italic;
+  font-size: 20px;
+}
+
+
+
+/* Container für den gesamten Erfahrungsbereich */
+.experience {
+  max-width: 800px;        /* Begrenze Breite für bessere Lesbarkeit */
+  margin: 2rem auto;       /* Zentriert den Inhalt und schafft Abstand */
+  padding: 0 1rem;         /* Etwas Seitenabstand für schmale Bildschirme */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;      /* Überschrift & Inhalt zentriert */
+}
+
+/* Hauptüberschrift */
+.experience h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+/* Einzelne „Timeline“-Elemente */
+.timeline-item {
+  display: flex;
+  flex-direction: column;  /* Jede Station in Spalten (Jahresrange, dann Text) */
+  align-items: center;     /* Zentriert beide Teile */
+  margin-bottom: 2rem;     /* Abstand zwischen den Stationen */
+}
+
+/* Jahresrange links / oben */
+.year-range {
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 0.5rem;   /* Leichter Abstand zum Text */
+  font-size: 1.1rem;
+}
+
+/* Textbereich */
+.timeline-text {
+  max-width: 600px;        /* Begrenze Textbreite */
+}
+
+/* Absätze in der Timeline */
+.timeline-text p {
+  margin: 0;               /* Entfernt Standardabstand oben/unten */
+  text-align: left;        /* Falls du den Fließtext linksbündig möchtest */
+  line-height: 1.6;
+}
+.timeline{
+  text-decoration: underline;
+}
+.timeline,
+.timeline + p {
+  display: inline;
+}
+
+.timeline {
+  text-decoration: underline;
+}
+
+
+ /* Basis-Reset */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #fff;
+  font-family: sans-serif;
+}
+/* Container für die Slideshow */
+.slideshow-container {
+  position: relative;
+  width: 800px;       /* Passe die Breite nach Bedarf an */
+  height: 500px;      /* Passe die Höhe nach Bedarf an */
+  margin: 50px auto;  /* Zentriert den Container mit Abstand */
+  overflow: hidden;
+  background: #fff;   /* Weißer Hintergrund, damit keine störenden Balken sichtbar sind */
+}
+/* Alle Slides (Bilder) liegen übereinander */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;    /* Zeigt das komplette Bild an, skaliert proportional */
+  object-position: center;
+  opacity: 0;             /* Standardmäßig unsichtbar */
+  transition: opacity 0.5s ease-in-out;  /* Sanfter Übergang */
+}
+/* Die aktive Slide ist sichtbar */
+.slide.active {
+  opacity: 1;
+}
+
+.Profis {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Intro-Text */
+.Profis .intro {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Club-Bereich */
+.club {
+  margin-bottom: 1.5rem;
+}
+
+/* Clubnamen unterstrichen */
+.club h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-decoration: underline;
+  color: #444;
+}
+
+/* Spielertext */
+.players {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Optional: Abstand zwischen Spielern, falls gewünscht */
+.players strong {
+  font-weight: bold;
+}
+
+/* Falls du die Spielerzeile in mehreren Zeilen umbrechen möchtest,
+   kannst du den Absatz so belassen. Andernfalls lassen sich die Kommas auch mit
+   line-height und letter-spacing feinjustieren. */

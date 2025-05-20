@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutMe</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function toggleMenu() {
+            const mobileNav = document.getElementById("mobile-nav");
+            if (mobileNav.style.display === "flex") {
+                mobileNav.style.display = "none";
+            } else {
+                mobileNav.style.display = "flex";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="nebensachen/Logo-DU-NoText.png" alt="Logo"></div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">Über mich</a></li>
+                    <li><a href="#">Leistungen</a></li>
+                    <li><a href="#">Termin & Info</a></li>
+                </ul>
+            </nav>
+            <div class="burger-menu" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">Über mich</a></li>
+            <li><a href="#">Leistungen</a></li>
+            <li><a href="#">Termin & Info</a></li>
+        </ul>
+    </div>
+
+    <!-- Start-BEREICH -->
+    <section class="Start">
+        <div class="AboutScroll-down"></div>
+    </section>
+    <section class="quote-section">
+        <!-- Großes Anführungszeichen -->
+        <div class="quote-icon">“</div>
+
+        <!-- Erste Zeile (größer) -->
+        <h2>Lernen, Lachen, Leisten -</h2>
+
+        <!-- Kleinere Zeilen darunter -->
+        <p>Die Erfolgsfaktoren für Therapie, Rehabilitation und Training.</p>
+    </section>
+
+    <section class="profile-section">
+        <!-- Linke Spalte: Bild -->
+        <div class="profile-image">
+            <img src="Fotos/AboutMe.jpg" alt="Dominik Urmann">
+        </div>
+
+        <!-- Rechte Spalte: Textbox -->
+        <div class="profile-text">
+            <div class="text-box">
+                <p class="p1">
+                    Die Leidenschaft für Bewegung und Sport begleitet mich von klein auf und motiviert mich,<br>
+                    stets neue Methoden zur <strong>Therapie</strong>, <strong>Rehabilitation</strong> und
+                    <strong>Leistungssteigerung</strong> zu erlernen.<br>
+                    Durch die breit gefächerte Ausbildung und berufliche Erfahrung konnte ich sowohl im
+                    <strong>Hochleistungssport</strong>
+                    als auch in der <strong>breiten Masse</strong>, Menschen in ihrem gesundheitlichen Fortschritt
+                    unterstützen.
+                    Besonders die Arbeit im Nachwuchs- und Profibereich des
+                    <strong>FC Red Bull Salzburg</strong> hat mir wertvolle Einblicke
+                    in die Bedürfnisse bei <strong>chronischen Beschwerden</strong>, <strong>Überlastungen</strong>,
+                    <strong>Verletzungen</strong>
+                    und <strong>Nachbehandlungen von Operationen</strong> gegeben.
+                </p>
+
+                <p><strong class="p2">- Dominik Urmann | Sportwissenschaftler -</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience">
+        <h2>2018–2025: FC Red Bull Salzburg</h2>
+
+        <!-- 1) 2023–2025 -->
+        <div class="timeline-item">
+            <div class="year-range">2023–2025:</div>
+            <div class="timeline-text">
+                <p class="timeline">
+                    Reha-Trainer Profis FC Red Bull Salzburg</p>
+                <p>: Erfahrung im <strong>täglichen Arbeiten mit Spitzensportlern </strong>um sie 
+                    nach Verletzungen schnellst und bestmöglich für anstehende Wettkämpfe 
+                    wie Champions League fit zu bekommen. Entwicklung von <strong>maßgeschneiderten 
+                    und Evidenz geleiteten Reha- und Trainingsplänen.</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- 2) 2019–2023 -->
+        <div class="timeline-item">
+            <div class="year-range">2019–2023:</div>
+            <div class="timeline-text">
+                <p class="timeline">
+                    Reha-Trainer Red Bull Akademie </p>
+                <p>: Als <strong>Präventions-, Athletik- und Fitnesstrainer </strong>
+                    betreute ich verletzte Nachwuchsspieler und arbeitete 
+                    eng mit den medizinischen und sportlichen Abteilungen 
+                    zusammen, um gezielt die Rehabilitation und 
+                <strong>Leistungssteigerung</strong> zu fördern.
+                </p>
+            </div>
+        </div>
+
+         <!-- 3) 2018–2020 -->
+         <div class="timeline-item">
+            <div class="year-range">2018–2020:</div>
+            <div class="timeline-text">
+                <p class="timeline">
+                    Nachwuchs-Fußballtrainer FC Red Bull Salzburg</p>
+                <p>: Betreuung und <strong>Entwicklung von jungen Talenten</strong> im Jugendbereich.
+                </p>
+            </div>
+        </div>
+
+        <!-- 4) 2016–2019 -->
+        <div class="timeline-item">
+            <div class="year-range">2016–2019:</div>
+            <div class="timeline-text">
+                <p class="timeline">
+                    Sportwissenschaftler bei Sportssupport </p>
+                <p>: Tägliche Arbeit mit einer breiten Zielgruppe, 
+                    von jung bis alt, mit verschiedenen gesundheitlichen 
+                    Zielen, wie z.B. Schmerzreduktion durch aktives Training, 
+                    Fitnesssteigerung und Gewichtsverlust.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="slideshow-container">
+        <img src="Fotos/SS-01.jpg" alt="Bild 1" class="slide active">
+        <img src="Fotos/SS-02.jpg" alt="Bild 2" class="slide">
+        <img src="Fotos/SS-03.jpg" alt="Bild 3" class="slide">
+        <img src="Fotos/SS-04.jpg" alt="Bild 4" class="slide">
+        <img src="Fotos/SS-05.jpg" alt="Bild 5" class="slide">
+        <img src="Fotos/SS-06.jpg" alt="Bild 6" class="slide">
+        <img src="Fotos/SS-07.jpg" alt="Bild 7" class="slide">
+        <img src="Fotos/SS-08.jpg" alt="Bild 8" class="slide">
+    </div>
+
+
+    <section class="Profis">
+        <!-- Überschrift -->
+        <p class="intro"><strong>Als Reha-Trainer betreute Nationalteamspieler:</strong></p>
+      
+        <!-- FC Red Bull Salzburg -->
+        <div class="club">
+          <h3>FC Red Bull Salzburg:</h3>
+          <p class="players">
+            Alexander <strong>SCHLAGER</strong>, Oscar <strong>GLOUKH</strong>, Andreas <strong>ULMER</strong>, Maurits <strong>KJAERGAARD</strong>, Mads <strong>BIDSTRUP</strong>, Adam <strong>DAGHIM</strong>, Karim <strong>KONATÉ</strong>, Dorgeles <strong>NENE</strong>, Daouda <strong>GUINDO</strong>, Mamady <strong>DIAMBOU</strong>, Janis <strong>BLASWICH</strong>, Leandro <strong>MORGALLA</strong>, Aleksa <strong>TERZIC</strong>, Petar <strong>RATKOV</strong>
+          </p>
+        </div>
+      
+        <!-- Deutsche Bundesliga -->
+        <div class="club">
+          <h3>Deutsche Bundesliga:</h3>
+          <p class="players">
+            Nicolas <strong>SEIWALD</strong>, Benjamin <strong>SESKO</strong>, Karim <strong>ADEYEMI</strong>, Alexander <strong>PRASS</strong>, Junior <strong>ADAUM</strong>, Jusuf <strong>GAZIBEGOVIC</strong>
+          </p>
+        </div>
+      
+        <!-- Serie A -->
+        <div class="club">
+          <h3>Serie A:</h3>
+          <p class="players">
+            Strahinja <strong>PAVLOVIC</strong>, Noah <strong>OKAFOR</strong>, Flavius <strong>DANILIUC</strong>, Oumar <strong>SOLET</strong>, Ignace <strong>van der BREMPT</strong>
+          </p>
+        </div>
+      
+        <!-- League 1 -->
+        <div class="club">
+          <h3>League 1:</h3>
+          <p class="players">
+            Philipp <strong>KÖHN</strong>, Amar <strong>DEDIC</strong>, Oumar <strong>Diakité</strong>
+          </p>
+        </div>
+      
+        <!-- La Liga -->
+        <div class="club">
+          <h3>La Liga:</h3>
+          <p class="players">
+            Luka <strong>SUCIC</strong>, David <strong>AFFENGRUBER</strong>
+          </p>
+        </div>
+      </section>
+
+
+
+    <footer class="site-footer">
+        <!-- Oberer Bereich: Logo links, Kontakt rechts -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <!-- Pfad zu deinem DU-Logo -->
+                <img src="nebensachen/Logo-DU-NoText.png" alt="DU Logo">
+            </div>
+            <div class="footer-info">
+                <p>Dominik Urmann</p>
+                <p>Medizinischer Bewegungs- & Trainingstherapeut</p>
+                <p>S10 Hofkirchen & Cityfit Rohrbach</p>
+                <p>+43 670 1883676</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Trennlinie -->
+        <hr>
+
+        <!-- Unterer Bereich: Impressum, Datenschutz, Copyright -->
+        <div class="footer-bottom">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <span>© <a href="https://DU-Trainingstherapie.at" target="_blank" rel="noopener noreferrer">
+                    DU-Trainingstherapie.at
+                </a></span>
+            <span>Development: Jonas Kronenberger</span>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <script src="Slideshow.js"></script>
+</body>
+
+</html>
